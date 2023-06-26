@@ -1,6 +1,6 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import FilterLabel from "../label/FilterLabel";
+
 
 const PageHeader = () => {
   return (
@@ -9,9 +9,6 @@ const PageHeader = () => {
         <Typography variant="h5" component="div" noWrap>
           Podcaster
         </Typography>
-        <div style={{ textAlign: "end" }}>
-          <FilterLabel />
-        </div>
       </div>
     </div>
   );

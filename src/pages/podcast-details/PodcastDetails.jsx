@@ -7,10 +7,14 @@ import CardDetails from "../../components/cards/podcast-details/CardDetails";
 import { Grid } from "@mui/material";
 import "./PodcastDetails.css";
 
-const PodcastDetails = () => {
+const PodcastDetails = ({ setIsLoading }) => {
   const { podcastId } = useParams();
   const [details, setDetails] = useState([]);
   useEffect(() => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
     const fetchData = async () => {
       try {
         const data = await fetchPodcastDetails(podcastId);
@@ -21,7 +25,7 @@ const PodcastDetails = () => {
     };
 
     fetchData();
-  }, [podcastId]);
+  }, [podcastId, setIsLoading]);
   return (
     <div >
         <PageHeader />
@@ -29,7 +33,7 @@ const PodcastDetails = () => {
         <Grid item xs={4} sm={4} md={4} lg={4} xl={4} >
           <CardDetails id={podcastId} />
         </Grid>
-        <Grid item xs={7} sm={7} md={7} lg={7} xl={7} >
+        <Grid item xs={8} sm={8} md={8} lg={8} xl={8} >
           <EpisodeTable episodes={details} />
         </Grid>
       </Grid>

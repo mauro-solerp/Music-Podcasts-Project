@@ -8,18 +8,22 @@ import PageHeader from "../../components/header/PageHeader";
 
 import fetchPodcasts from "../../services/get-podcast-list";
 
-const PodcastList = () => {
+const PodcastList = ({ setIsLoading }) => {
   const [podcasts, setPodcasts] = useState([]);
   const [filteredPodcasts, setFilteredPodcasts] = useState([]);
 
   useEffect(() => {
-    fetchPodcastsData(); 
-  }, []);
+     setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    fetchPodcastsData();
+  }, [setIsLoading]);
 
   const fetchPodcastsData = async () => {
     try {
       const storedData = localStorage.getItem("podcastsData");
-      
+
       if (storedData) {
         const data = JSON.parse(storedData);
         setPodcasts(data);
@@ -56,8 +60,8 @@ const PodcastList = () => {
               return (
                 <Grid
                   item
-                  xs={3}
-                  sm={3}
+                  xs={12}
+                  sm={6}
                   md={3}
                   lg={3}
                   xl={3}

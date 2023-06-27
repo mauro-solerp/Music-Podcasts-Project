@@ -1,0 +1,7 @@
+.header-text{
+    color: #0d80de;
+}
+.header-text:hover{
+    color: #07518d;
+    cursor: pointer;
+}

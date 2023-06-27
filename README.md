@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Music Podcaster
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Music Podcaster! Is an application that provides a curated list of the 100 most popular and most listened to podcasts on iTunes. You can see the details of each postcast with its chapters and listen to them.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+To run the application locally, follow the steps below:
 
-### `npm start`
+### Clone the Repository
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Open your terminal or command prompt.
+2. Navigate to the directory where you want to clone the repository.
+3. Run the following command to clone the repository:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```bash
+   git clone https://github.com/mauro-solerp/music-podcasts-project.git
+    ```
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Navigate to the root directory of the repository.
+    ```bash
+   cd music-podcasts-project
+    ```
+2. Install the dependencies.
+    ```bash
+    npm install
+     ```
 
-### `npm run build`
+## Starting the Application
+To start the application, you have two modes available: 
+-  Development mode
+- Production mode
+  
+### Development Mode
+- To start the application in development mode, run the following command:
+    ```bash
+    npm start
+    ```
+This will start the development server and automatically open your application in a web browser.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Production Mode
+1. To start the application in production mode, run the following command:
+    ```bash
+     npm run build:prod
+     ```
+2. Serve the built files using a static file server. You can use a tool like serve or any other HTTP server of your choice.
+For example, using serve:
+    ```bash
+    npm install -g serve
+    serve -s build
+    ```
+This will start the server and serve the production version of your application. You can access it by opening your browser  the specified port.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -8,7 +8,7 @@ const fetchPodcasts = async () => {
     const data = response.data.feed.entry;
     return data;
   } catch (error) {
-    console.error("Error al obtener los datos:", error);
+    console.error(error);
     throw error;
   }
 };

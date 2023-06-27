@@ -1,31 +1,25 @@
-import React from "react";
-import fetchPodcasts from "../../services/get-podcast-list";
+import React, { useContext } from "react";
 import { useEffect, useState } from "react";
 import { CircularProgress, Grid } from "@mui/material";
-import PodcastCard from "../../components/cards/PodcastCard";
+import PodcastCard from "../../components/cards/podcast-card/PodcastCard";
 import "./PodcastList.css";
 import FilterLabel from "../../components/label/FilterLabel";
+import PageHeader from "../../components/header/PageHeader";
+import PodcastContext from "../../hooks/PodcastContext";
 
 const PodcastList = () => {
-  const [podcasts, setPodcasts] = useState([]);
+  const podcasts = useContext(PodcastContext); // Accede a los datos de los podcasts desde el contexto
   const [filteredPodcasts, setFilteredPodcasts] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await fetchPodcasts();
-        setPodcasts(data);
-        setFilteredPodcasts(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchData();
-  }, []);
+    setFilteredPodcasts(podcasts); // Actualiza los podcasts filtrados con los datos del contexto
+  }, [podcasts]);
 
   return (
     <div>
+      <div>
+        <PageHeader />
+      </div>
       <div style={{ textAlign: "end" }}>
         {podcasts.length > 0 ? (
           <FilterLabel

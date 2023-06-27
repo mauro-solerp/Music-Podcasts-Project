@@ -13,9 +13,16 @@ import {
 import React from "react";
 import convertDateFormat from "../../utils/DateFormatter";
 import convertMillisecondsToTime from "../../utils/convertTime";
+import "./EpisodeTable.css";
+import { useNavigate, useParams } from "react-router-dom";
 
 const EpisodeTable = (data) => {
+  const { podcastId } = useParams();
+  let navigate = useNavigate();
   const episodes = data.episodes;
+  const viewEpisode = (episode_id) => {
+    navigate(`/podcast/${podcastId}/episode/${episode_id}`);
+  };
   return (
     <div style={{ width: "100%" }}>
       {episodes.length > 0 ? (
@@ -44,7 +51,7 @@ const EpisodeTable = (data) => {
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
                     <TableCell align="left">
-                      <a href="/">{row.trackName}</a>
+                      <span className="text-url" onClick={() => viewEpisode(row.trackId)}>{row.trackName}</span>
                     </TableCell>
                     <TableCell align="center">
                       {convertDateFormat(row.releaseDate)}

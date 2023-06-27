@@ -1,0 +1,8 @@
+.text-url {
+    color: #0d80de;
+}
+.text-url:hover {
+    color: #07518d;
+    cursor: pointer;
+    text-decoration: underline;
+}

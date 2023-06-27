@@ -10,7 +10,6 @@ import "./PodcastDetails.css";
 const PodcastDetails = () => {
   const { podcastId } = useParams();
   const [details, setDetails] = useState([]);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -27,10 +26,10 @@ const PodcastDetails = () => {
     <div >
         <PageHeader />
       <Grid container spacing={2} style={{marginTop: "30px"}} > 
-        <Grid item xs={3} sm={3} md={3} lg={3} xl={3} >
+        <Grid item xs={4} sm={4} md={4} lg={4} xl={4} >
           <CardDetails id={podcastId} />
         </Grid>
-        <Grid item xs={8} sm={8} md={8} lg={8} xl={8} >
+        <Grid item xs={7} sm={7} md={7} lg={7} xl={7} >
           <EpisodeTable episodes={details} />
         </Grid>
       </Grid>
